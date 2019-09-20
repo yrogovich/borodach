@@ -4,7 +4,9 @@ $(function() {
         stepSize: 85 
     });
 
-    AOS.init();
+    AOS.init({
+        duration: 1000,
+    });
 
     $('.burger').click(function() {
         $('.mobile-menu').toggleClass('active');

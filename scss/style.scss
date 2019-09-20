@@ -36,7 +36,6 @@ a {
     color: inherit;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html {
@@ -68,10 +67,15 @@ h5, .h5 {
 }
 
 .h1, h1 {
-    font-size: 6rem;
+    //font-size: 6rem;
+    font-size: 7vh;
+    @include md(font-size, 5vh);
+    @include sm(font-size, 3.8vh);
 }
 .h2, h2 {
-    font-size: 3.6rem;
+    //font-size: 3.6rem;
+    font-size: 3.7vh;
+    @include sm(font-size, 3vh);
 }
 .h3, h3 {
     font-size: 2.4rem;
@@ -83,9 +87,6 @@ h5, .h5 {
 ul {
     list-style-type: none;
     color: $gray;
-    li {
-        
-    }
 }
 
 p {
@@ -106,8 +107,241 @@ p {
     @include wrapper-full();
 }
 
+//btn
+.btn {
+    display: inline-block;
+    text-align: center;
+    font-size: 1.2rem;
+    text-transform: uppercase;   
 
+    max-width: 100%;
+    
+    transition: .3s;
+    &:hover {
+        filter: brightness(1.2);
+    }
+}
+.btn-primary {
+    background-color: $primary;
+    color: $black;
+    padding: 2.2rem 1rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    min-width: 35rem;
+    @include md(min-width, unset);
+}
 
+//navbar
+navbar {
+    display: block;
+    border-bottom: 1px solid rgba($white, .1);
+    padding: 2rem 0;
+    @include sm(padding, 1rem 0);
+    .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        flex: 1 1 100px;
+        max-width: 65rem;
+        @include lg(display, none);
+        li {
+            a {
+                font-size: 1.1rem;
+                margin: 1.5rem;
+                color: $white;
+                text-transform: uppercase;
+                opacity: .7;
+                transition: .3s;
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .info {
+        display: flex;
+        @include lg(display, none);
+        flex-direction: column;
+        align-items: flex-end;
+        .primary-text {
+            margin-bottom: 0.2rem;
+        }
+    }
+}
+.primary-text {
+    color: $primary;
+    font-size: 1.6rem;
+}
+.img-wrapper {
+    img {
+        max-width: 100%;
+        object-fit: contain;
+    }
+}
+
+//header
+header{
+    background: #0F0F0F url('../img/banner_home.jpg') center  / cover no-repeat;
+    min-height: 100vh;
+    text-align: center;
+    color: $white;
+    p {
+        color: $white;
+    }
+    .h1 {
+        color: $primary;
+        margin-top: 7vh;
+        margin-bottom: 1rem;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        .normal {
+            text-transform: none;
+        }
+    }
+    .subtitle {
+        font-size: 2.2vh;
+        
+        font-family: 'Merriweather', serif;
+        font-weight: bold;
+    }
+    .features {
+        margin: 3.7vh -1.5vh;
+        @include xs(margin, 3.7vh 0);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        @include xs-block() {
+            justify-content: flex-start;
+        };
+
+        .feature {
+            margin: 3vh;
+            @include xs-block() {
+                margin: 1vh;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                text-align: left;
+            };
+        }
+        .img-wrapper {
+            height: 8.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            @include xs-block() {
+                margin-right: 2rem;
+                margin-bottom: 0;
+                width: 5rem;
+                img {
+                    width: 100%;
+                }
+            };
+        }
+        
+    }
+    .btn {
+        margin-top: 3rem;
+        padding: 2.2rem 9rem;
+        @include md(padding, 1.5rem 2rem);
+        margin-bottom: 5rem;
+    }
+}
+
+//logo 
+.logo {
+    height: 6.2rem;
+    @include sm(height, 4.4rem);
+    &-image {
+        height: 100%;
+    }
+    &-text {
+        height: 100%;
+        @media (max-width: 360px) {
+            display: none;
+        }
+    }
+}
+
+// Burger
+.burger {
+    cursor: pointer;
+    transition: transform 400ms;
+    user-select: none;
+    display: none;
+    z-index: 50;
+    @include lg(display, block);
+    .line {
+        fill:none;
+        transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+        stroke: $primary;
+        stroke-width:5.5;
+        stroke-linecap:round;
+    }
+    .top {
+        stroke-dasharray: 40 82;
+    }
+    .middle {
+        stroke-dasharray: 40 111;
+    }
+    .bottom {
+        stroke-dasharray: 40 161;
+    }
+    &.active .top {
+        stroke-dasharray: 17 82;
+        stroke-dashoffset: -62px;
+    }
+    &.active .middle {
+        stroke-dashoffset: 23px;
+    }
+    &.active .bottom {
+        stroke-dashoffset: -83px;
+    }
+    &.active {
+        transform: rotate(45deg);
+    }
+}
+
+// Mobile menu 
+.mobile-menu {
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(#0F0F0F, .8);
+    color: $primary;
+    z-index: 10;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    transition: 1s;
+    .menu {
+        li {
+            margin-bottom: 2rem;
+        }
+        a{
+            font-family: 'Merriweather', serif;
+            font-weight: bold;
+            color: $primary;
+            font-size: 3rem;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+    }
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
 
 // Utilities
 .block {
@@ -116,6 +350,10 @@ p {
 .md-block {
     display: block;
     @include md(display, inline-block);
+}
+.sm-block {
+    display: block;
+    @include sm(display, inline-block);
 }
 .text-center {
     text-align: center;

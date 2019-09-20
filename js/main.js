@@ -3,6 +3,12 @@ $(function() {
         animationTime: 800,
         stepSize: 85 
     });
+
+    AOS.init();
+
+    $('.burger').click(function() {
+        $('.mobile-menu').toggleClass('active');
+    });
     
     // Lazyloading
     $('.lazy').Lazy({

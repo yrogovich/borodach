@@ -8,18 +8,45 @@ $(function() {
         duration: 1000,
     });
 
+
+
+    var images = document.querySelectorAll('.bg-scissors img');
+    new simpleParallax(images, {
+        delay: 0,
+        orientation: 'down',
+        scale: 1.5,
+        overfow: true,
+        delay: .6,
+	    transition: 'cubic-bezier(0,0,0,1)'
+    });
+
+    var images = document.querySelectorAll('.bg-straight-razor img');
+    new simpleParallax(images, {
+        delay: 0,
+        orientation: 'down',
+        scale: 1.3,
+        overfow: true,
+        delay: .6,
+	    transition: 'cubic-bezier(0,0,0,1)'
+    });
+
+    var images = document.querySelectorAll('.bg-tambourine img');
+    new simpleParallax(images, {
+        delay: 0,
+        orientation: 'down',
+        scale: 1.5,
+        overfow: true,
+        delay: .6,
+	    transition: 'cubic-bezier(0,0,0,1)'
+    });
+
     $('.burger').click(function() {
         $('.mobile-menu').toggleClass('active');
     });
     
     // Lazyloading
     $('.lazy').Lazy({
-        // your configuration goes here
         scrollDirection: 'vertical',
-        effect: 'fadeIn',
-        effectTime: 500,
-        //threshold: 0,
-        visibleOnly: true,
         onError: function(element) {
             console.log('error loading ' + element.data('src'));
         }

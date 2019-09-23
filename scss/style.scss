@@ -367,12 +367,14 @@ header{
 
 //logo 
 .logo {
+    display: flex;
     height: 6.2rem;
     @include sm(height, 4.4rem);
     &-image {
         height: 100%;
     }
     &-text {
+        margin-left: 1rem;
         height: 100%;
         @media (max-width: 360px) {
             display: none;
@@ -730,6 +732,75 @@ ul.primary-style {
     text-align: center;
     .btn {
         margin-bottom: 2rem;
+    }
+}
+
+//contacts
+#contacts {
+    .row {
+        margin-top: 5.5rem;
+        margin-bottom: -3rem;
+        @include row-flex();
+        
+        .map {
+            @include col();
+            @include size(7);
+            @include size-sm(12);
+            height: 44rem;
+            padding: 0;
+            margin-bottom: 3rem;
+        }
+        .contacts {
+            @include col();
+            @include size(4);
+            @include size-sm(12);
+
+            margin-bottom: 3rem;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            padding: 5rem 3rem;
+            font-size: 1.6rem;
+            hr {
+                width: 100%;
+                border: none;
+                border-bottom: 3px solid #E9E5E1;
+                margin: 4rem 0 6rem 0;
+            }
+            .icon-map:before,
+            .icon-phone:before {
+                display: block;
+                text-align: center;
+                margin-bottom: 1rem;
+            }
+            .icon-phone {
+                &:before {
+                    content: url('../img/contacts/phone.svg');
+                }
+            }
+            .icon-map {
+                &:before {
+                    content: url('../img/contacts/map-pin.svg');
+                }
+            }
+        }
+    }
+}
+.borders {
+    position: relative;
+    padding: 1rem;
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        margin: 1rem;
+        border: 1px solid $primary;
     }
 }
 

@@ -541,6 +541,9 @@ header .btn {
 }
 
 .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   height: 6.2rem;
 }
 
@@ -555,6 +558,7 @@ header .btn {
 }
 
 .logo-text {
+  margin-left: 1rem;
   height: 100%;
 }
 
@@ -1091,6 +1095,102 @@ ul.primary-style li:before {
 
 .form-style .btn {
   margin-bottom: 2rem;
+}
+
+#contacts .row {
+  margin-top: 5.5rem;
+  margin-bottom: -3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+#contacts .row .map {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: calc(58.33333% - 30px);
+  height: 44rem;
+  padding: 0;
+  margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 780px) {
+  #contacts .row .map {
+    width: calc(100% - 30px);
+  }
+}
+
+#contacts .row .contacts {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: calc(33.33333% - 30px);
+  margin-bottom: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5rem 3rem;
+  font-size: 1.6rem;
+}
+
+@media screen and (max-width: 780px) {
+  #contacts .row .contacts {
+    width: calc(100% - 30px);
+  }
+}
+
+#contacts .row .contacts hr {
+  width: 100%;
+  border: none;
+  border-bottom: 3px solid #E9E5E1;
+  margin: 4rem 0 6rem 0;
+}
+
+#contacts .row .contacts .icon-map:before,
+#contacts .row .contacts .icon-phone:before {
+  display: block;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#contacts .row .contacts .icon-phone:before {
+  content: url("../img/contacts/phone.svg");
+}
+
+#contacts .row .contacts .icon-map:before {
+  content: url("../img/contacts/map-pin.svg");
+}
+
+.borders {
+  position: relative;
+  padding: 1rem;
+}
+
+.borders:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 1rem;
+  border: 1px solid #D5A353;
 }
 
 #subscribe {

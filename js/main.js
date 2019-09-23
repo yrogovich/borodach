@@ -8,6 +8,8 @@ $(function() {
         duration: 1000,
     });
 
+    $('.gallery a').simpleLightbox();
+
     var images = document.querySelectorAll('.parrallax-speed-3 img');
     new simpleParallax(images, {
         delay: 0,

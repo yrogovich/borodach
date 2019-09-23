@@ -118,7 +118,9 @@ p {
         text-align: center;
         font-family: 'Merriweather', serif;
         font-weight: bold;
-        
+        &.wide {
+            max-width: 63rem;
+        }
     }
 }
 
@@ -375,6 +377,7 @@ header{
     }
 }
 #teachers {
+    padding-bottom: 0;
     .container {
         position: relative;
     }
@@ -466,7 +469,6 @@ ul.primary-style {
 
 //no-bullshit
 #no-bullshit {
-    padding-top: 0;
     padding-bottom: 0;
     .row {
         display: flex;
@@ -617,6 +619,31 @@ ul.primary-style {
     }
 }
 
+//Gallery
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -.8rem;
+    .img-wrapper {
+        flex: 1 1 250px;
+        margin: .8rem;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    .pair {
+        display: flex;
+        flex-direction: column;
+        .img-wrapper {
+            height: 15rem;
+        }
+        @include sm(width, 100%);
+    }
+}
+
 //
 .modal {
     position: relative;
@@ -672,7 +699,7 @@ ul.primary-style {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    display: flex; 
+    display: none;
     transition: 1s;
     .menu {
         li {
@@ -689,6 +716,7 @@ ul.primary-style {
     &.active {
         opacity: 1;
         visibility: visible;
+        display: flex; 
     }
 }
 

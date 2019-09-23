@@ -192,6 +192,10 @@ p {
   max-width: 63rem;
 }
 
+.section .container {
+  position: relative;
+}
+
 .img-wrapper img {
   -o-object-fit: cover;
      object-fit: cover;
@@ -243,8 +247,8 @@ p {
 
 .btn.btn-primary, .btn.btn-black {
   padding: 2.2rem 1rem;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 4px 4px rgba(193, 146, 70, 0.25);
+          box-shadow: 0px 4px 4px rgba(193, 146, 70, 0.25);
   min-width: 35rem;
 }
 
@@ -273,17 +277,47 @@ p {
   margin-bottom: 4rem;
   font-size: 1.6rem;
   text-align: left;
+  border-bottom: 1px solid #D5A353;
+  padding: .5rem 0;
+  margin: 0 2rem 4rem 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.input-wrapper.user-icon:before, .input-wrapper.mail-icon:before, .input-wrapper.phone-icon:before {
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin: 0 1.5rem;
+  -webkit-filter: saturate(0);
+          filter: saturate(0);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.input-wrapper.user-icon:before {
+  content: url("../img/icons/user.svg");
+}
+
+.input-wrapper.mail-icon:before {
+  content: url("../img/icons/mail.svg");
+}
+
+.input-wrapper.phone-icon:before {
+  content: url("../img/icons/phone.svg");
+}
+
+.input-wrapper:hover:before {
+  -webkit-filter: saturate(1);
+          filter: saturate(1);
 }
 
 .input-wrapper input {
   border: none;
-  border-bottom: 1px solid #D5A353;
   width: 100%;
-  padding: .5rem 4rem;
-}
-
-.input-wrapper input:hover {
-  border-bottom: 1px solid #000;
+  background: transparent;
 }
 
 navbar {
@@ -584,10 +618,6 @@ header .btn {
   padding-bottom: 0;
 }
 
-#teachers .container {
-  position: relative;
-}
-
 #teachers.bg-straight-razor:before {
   z-index: 0;
 }
@@ -692,7 +722,7 @@ ul.primary-style li:before {
 
 .bg-item {
   position: absolute;
-  z-index: -1;
+  z-index: 0;
 }
 
 @media screen and (max-width: 780px) {
@@ -783,10 +813,6 @@ ul.primary-style li:before {
 
 #no-bullshit .row p {
   margin-bottom: 3rem;
-}
-
-#boroda-features .container {
-  position: relative;
 }
 
 #boroda-features .features {
@@ -983,6 +1009,74 @@ ul.primary-style li:before {
   }
 }
 
+@media screen and (max-width: 780px) {
+  #employment {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  #employment .h2 {
+    font-size: 2vh;
+  }
+}
+
+#employment .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 5rem -6.5rem 0 -6.5rem;
+}
+
+@media screen and (max-width: 780px) {
+  #employment .row {
+    margin: 2rem 0;
+  }
+}
+
+#employment .row .column-1,
+#employment .row .column-2 {
+  margin: 2rem 6.5rem;
+}
+
+@media screen and (max-width: 780px) {
+  #employment .row .column-1,
+  #employment .row .column-2 {
+    margin: 3rem 0;
+  }
+}
+
+#employment .row .column-1 p {
+  max-width: 35rem;
+  font-size: 1.6rem;
+  color: #191514;
+  margin-bottom: 7rem;
+}
+
+@media screen and (max-width: 780px) {
+  #form-section .h2 {
+    font-size: 2vh;
+  }
+}
+
+.form-style {
+  max-width: 60rem;
+  margin: auto;
+  text-align: center;
+}
+
+.form-style .btn {
+  margin-bottom: 2rem;
+}
+
 .modal {
   position: relative;
   padding: 1rem;
@@ -1007,19 +1101,34 @@ ul.primary-style li:before {
   border-bottom: 3px solid #E9E5E1;
 }
 
-.modal .privacy {
-  -webkit-filter: saturate(0);
-          filter: saturate(0);
-  color: #8C8988;
-}
-
-.modal .privacy img {
-  vertical-align: middle;
-}
-
 .modal .btn {
   margin-bottom: 1rem;
   padding: 1.3rem 5.5rem;
+}
+
+.privacy {
+  -webkit-filter: saturate(0);
+          filter: saturate(0);
+  color: #8C8988;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media screen and (max-width: 560px) {
+  .privacy {
+    font-size: 1.15rem;
+  }
+}
+
+.privacy img {
+  margin-right: 1rem;
 }
 
 .mobile-menu {
@@ -1108,5 +1217,9 @@ ul.primary-style li:before {
 .bold {
   font-family: 'Merriweather', serif;
   font-weight: bold;
+}
+
+.gray {
+  background-color: #F9F6F2;
 }
 /*# sourceMappingURL=style.css.map */

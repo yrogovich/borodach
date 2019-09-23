@@ -122,6 +122,9 @@ p {
             max-width: 63rem;
         }
     }
+    .container {
+        position: relative;
+    }
 }
 
 .img-wrapper img {
@@ -155,7 +158,7 @@ p {
     &.btn-primary,
     &.btn-black {
         padding: 2.2rem 1rem;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        box-shadow: 0px 4px 4px rgba(193, 146, 70, 0.25);
         min-width: 35rem;
         @include md(min-width, unset);
     }
@@ -175,20 +178,55 @@ p {
 
 //
 .input-wrapper {
+    &.user-icon,
+    &.mail-icon,
+    &.phone-icon {
+        &:before {
+            display: inline-block;
+            width: 2.4rem;
+            height: 2.4rem;
+            margin: 0 1.5rem;
+            filter: saturate(0);
+            transition: .3s;
+        } 
+    }
+    &.user-icon {
+        &:before {
+            content: url("../img/icons/user.svg");
+        }
+    }
+    &.mail-icon {
+        &:before {
+            content: url("../img/icons/mail.svg");
+        }
+    }
+    &.phone-icon {
+        &:before {
+            content: url("../img/icons/phone.svg");
+        }
+    }
+
     margin-bottom: 4rem;
     font-size: 1.6rem;
     text-align: left;
+    border-bottom: 1px solid $primary;
+    padding: .5rem 0;
+    margin: 0 2rem 4rem 2rem;
+    display: flex;
+    position: relative;
+    &:hover {
+        &:before {
+            filter: saturate(1);
+        } 
+    }
+
+    
     input {
         border: none;
-        border-bottom: 1px solid $primary;
         width: 100%;
-        padding: .5rem 4rem;
-        &:hover {
-            border-bottom: 1px solid #000;
-        }
+        background: transparent;
     }
 }
-
 
 //navbar
 navbar {
@@ -378,9 +416,6 @@ header{
 }
 #teachers {
     padding-bottom: 0;
-    .container {
-        position: relative;
-    }
     &.bg-straight-razor:before {
         z-index: 0;
     }
@@ -447,7 +482,7 @@ ul.primary-style {
 
 .bg-item {
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     @include sm(display, none);
 
     &.left-position {
@@ -513,9 +548,6 @@ ul.primary-style {
 
 //boroda-features
 #boroda-features {
-    .container {
-        position: relative;
-    }
     .features {
         text-align: center;
         .lazy {
@@ -644,6 +676,49 @@ ul.primary-style {
     }
 }
 
+//employment
+#employment {
+    @include sm(text-align, center);
+    .h2 {
+        @include sm(font-size, 2vh);
+    }
+    .row{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 5rem -6.5rem 0 -6.5rem;
+        @include sm(margin, 2rem 0);
+        .column-1,
+        .column-2 {
+            margin: 2rem 6.5rem;
+            @include sm(margin, 3rem 0);
+        }
+        .column-1{
+            p {
+                max-width: 35rem;
+                font-size: 1.6rem;
+                color: $black;
+                margin-bottom: 7rem;
+            }
+        }
+    }
+}
+//form-section
+#form-section {
+    .h2 {
+        @include sm(font-size, 2vh);
+    }
+}
+.form-style {
+    max-width: 60rem;
+    margin: auto;
+    text-align: center;
+    .btn {
+        margin-bottom: 2rem;
+    }
+}
+
 //
 .modal {
     position: relative;
@@ -670,17 +745,20 @@ ul.primary-style {
     //     height: 110%;
     //     background-color: $primar$white;
     // }
-    .privacy {
-        filter: saturate(0);
-        color: #8C8988;
-        img {
-            vertical-align: middle;
-        }
-        
-    }
     .btn {
         margin-bottom: 1rem;
         padding: 1.3rem 5.5rem;
+    }
+}
+.privacy {
+    filter: saturate(0);
+    color: #8C8988;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include xs(font-size, 1.15rem);
+    img {
+        margin-right: 1rem;
     }
 }
 
@@ -746,4 +824,6 @@ ul.primary-style {
     font-family: 'Merriweather', serif;
     font-weight: bold;
 }
-
+.gray {
+    background-color: #F9F6F2;
+}

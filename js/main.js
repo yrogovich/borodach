@@ -10,6 +10,15 @@ $(function() {
 
     $('.gallery a').simpleLightbox();
 
+    $('.slider').slick({
+        dots: true,
+        infinite: true,
+        slidesToShow: 1,
+        fade: true,
+        prevArrow: '<img class="arrow arrow-left" src="img/reviews/arrow-left-circle.svg" alt="arrow-left">',
+        nextArrow: '<img class="arrow arrow-right" src="img/reviews/arrow-right-circle.svg" alt="arrow-right">',
+    });
+
     var images = document.querySelectorAll('.parrallax-speed-3 img');
     new simpleParallax(images, {
         delay: 0,

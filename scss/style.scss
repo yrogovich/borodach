@@ -152,9 +152,7 @@ p {
     cursor: pointer;
     
     transition: .3s;
-    &:hover {
-        filter: brightness(1.2);
-    }
+    
     &.btn-primary,
     &.btn-black {
         padding: 2.2rem 1rem;
@@ -169,6 +167,23 @@ p {
     &.btn-primary {
         background-color: $primary;
         color: $black;
+        &:hover {
+            filter: brightness(1.2);
+        }
+    }
+    &.btn-inverse {
+        padding: 1.2rem 2rem;
+        background-color: transparent;
+        border: 1px solid $primary;
+        color: $primary;
+        &:hover {
+            background-color: $primary;
+            color: $white;
+        }
+    }
+    &.btn-block {
+        display: block;
+        width: 100%;
     }
     &.btn-sm {
         padding: 1rem 3.7rem;
@@ -211,7 +226,6 @@ p {
     text-align: left;
     border-bottom: 1px solid $primary;
     padding: .5rem 0;
-    margin: 0 2rem 4rem 2rem;
     display: flex;
     position: relative;
     &:hover {
@@ -687,7 +701,7 @@ ul.primary-style {
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        margin: 5rem -6.5rem 0 -6.5rem;
+        margin: 5rem 0 0 0;
         @include sm(margin, 2rem 0);
         .column-1,
         .column-2 {
@@ -711,11 +725,52 @@ ul.primary-style {
     }
 }
 .form-style {
-    max-width: 60rem;
+    max-width: 55rem;
     margin: auto;
     text-align: center;
     .btn {
         margin-bottom: 2rem;
+    }
+}
+
+//subscribe
+#subscribe {
+    background: $black url("../img/subscribe-bg.jpg") center / cover no-repeat;
+    color: $white;
+    p {
+        color: $white;
+    }
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        .column-1 {
+            flex: 3 1 300px;
+
+            display: flex;
+            .scissors {
+                margin-right: 2rem;
+            }
+            .h2 {
+                margin-bottom: 2rem;
+            }
+        }
+        .column-2 {
+            flex: 1 1 300px;
+        }
+    }
+    .input-wrapper {
+        margin-bottom: 2rem;
+    }
+}
+#subscribe-form {
+    position: relative;
+    .privacy {
+        position: absolute;
+        bottom: -1rem;
+        right: 0;
+        transform: translateY(100%);
+        font-size: 1.2rem;
     }
 }
 

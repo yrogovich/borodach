@@ -8,9 +8,17 @@ $(function() {
         duration: 1000,
     });
 
+    var images = document.querySelectorAll('.parrallax-speed-3 img');
+    new simpleParallax(images, {
+        delay: 0,
+        orientation: 'down',
+        scale: 1.9,
+        overfow: true,
+        delay: .6,
+	    transition: 'cubic-bezier(0,0,0,1)'
+    });
 
-
-    var images = document.querySelectorAll('.bg-scissors img');
+    var images = document.querySelectorAll('.parrallax-speed-2 img');
     new simpleParallax(images, {
         delay: 0,
         orientation: 'down',
@@ -20,7 +28,7 @@ $(function() {
 	    transition: 'cubic-bezier(0,0,0,1)'
     });
 
-    var images = document.querySelectorAll('.bg-straight-razor img');
+    var images = document.querySelectorAll('.parrallax-speed-1 img');
     new simpleParallax(images, {
         delay: 0,
         orientation: 'down',
@@ -30,15 +38,15 @@ $(function() {
 	    transition: 'cubic-bezier(0,0,0,1)'
     });
 
-    var images = document.querySelectorAll('.bg-tambourine img');
-    new simpleParallax(images, {
-        delay: 0,
-        orientation: 'down',
-        scale: 1.5,
-        overfow: true,
-        delay: .6,
-	    transition: 'cubic-bezier(0,0,0,1)'
-    });
+    // var images = document.querySelectorAll('.parrallax-speed-2 img');
+    // new simpleParallax(images, {
+    //     delay: 0,
+    //     orientation: 'down',
+    //     scale: 1.5,
+    //     overfow: true,
+    //     delay: .6,
+	//     transition: 'cubic-bezier(0,0,0,1)'
+    // });
 
     $('.burger').click(function() {
         $('.mobile-menu').toggleClass('active');
@@ -72,8 +80,6 @@ $(function() {
     // });
     
 
-    // // Masks for input
-    // $('.phone-mask').mask('+375 (00) 000-00-00');
-    // $('.date-mask').mask('00/00');
-    // $('.time-mask').mask('00:00');
+    // Masks for input
+    //$('.phone-mask').mask('00000000');
 });

@@ -1,20 +1,20 @@
 <?php
-$to = 'work-biznesrost24@yandex.by'; //Почта получателя, через запятую можно указать сколько угодно адресов
+$to = 'work-biznesrost24@yandex.by, borodabarber2018@gmail.com'; //Почта получателя, через запятую можно указать сколько угодно адресов
 $subject = 'Заявка с сайта '.$_SERVER['SERVER_NAME'] . ' ' . $_POST['form']; //Заголовок сообщения
 
 $ref = $_SERVER['HTTP_REFERER'];
 $result=parse_url($ref);
-parse_str($result['query'],$params);
-if (isset($params['utm_source']) || isset($params['utm_medium']) ||
-    isset($params['utm_campaign']) || isset($params['utm_content']) || isset($params['utm_term'])){
-    $utm .= "<p><strong>Источник:</strong> ".$params['utm_source'];
-    $utm .= "<p><strong>Тип трафика:</strong> ".$params['utm_medium'];
-    $utm .= "<p><strong>Кампания:</strong> ".$params['utm_campaign'];
-    $utm .= "<p><strong>Объявление:</strong> ".$params['utm_content'];
-    $utm .= "<p><strong>Кл. фраза:</strong> ".$params['utm_term'];
-} else {
-    $utm .= "<p>Нет данных UTM</p>";
-}
+// parse_str($result['query'],$params);
+// if (isset($params['utm_source']) || isset($params['utm_medium']) ||
+//     isset($params['utm_campaign']) || isset($params['utm_content']) || isset($params['utm_term'])){
+//     $utm .= "<p><strong>Источник:</strong> ".$params['utm_source'];
+//     $utm .= "<p><strong>Тип трафика:</strong> ".$params['utm_medium'];
+//     $utm .= "<p><strong>Кампания:</strong> ".$params['utm_campaign'];
+//     $utm .= "<p><strong>Объявление:</strong> ".$params['utm_content'];
+//     $utm .= "<p><strong>Кл. фраза:</strong> ".$params['utm_term'];
+// } else {
+//     $utm .= "<p>Нет данных UTM</p>";
+// }
 $message = '
         <html>
             <head>
@@ -34,8 +34,8 @@ $message = '
         if(isset($_POST['user_message']) && $_POST['user_message'] !== '')
             $message .= '<p>Сообщение: '.$_POST['user_message'].'</p>';
             
-        $message .= '<h2>Данные UTM</h2>';
-        $message .= $utm;
+        // $message .= '<h2>Данные UTM</h2>';
+        // $message .= $utm;
 $message .= '                 
             </body>
         </html>'; //Текст нащего сообщения можно использовать HTML теги

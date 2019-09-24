@@ -680,7 +680,7 @@ header .btn {
   height: 100%;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 350px) {
   .logo-text {
     display: none;
   }
@@ -1102,6 +1102,12 @@ ul.primary-style li:before {
   margin-bottom: 2rem;
 }
 
+@media screen and (max-width: 780px) {
+  .courses .course .body {
+    min-height: unset;
+  }
+}
+
 .courses .course .foot {
   height: 13rem;
   margin: 2rem;
@@ -1114,6 +1120,12 @@ ul.primary-style li:before {
 .courses .course .foot .btn {
   display: block;
   margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 780px) {
+  .courses .course .foot {
+    height: unset;
+  }
 }
 
 .courses .course:hover {
@@ -1572,6 +1584,13 @@ ul.primary-style li:before {
   transition: .3s;
 }
 
+@media screen and (max-width: 780px) {
+  .modal a.close-modal {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+}
+
 .modal a.close-modal:hover {
   opacity: .5;
 }
@@ -1606,7 +1625,7 @@ ul.primary-style li:before {
 
 @media screen and (max-width: 560px) {
   .privacy {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   .privacy img {
     height: 1.2rem;

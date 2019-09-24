@@ -2,19 +2,6 @@
 $to = 'work-biznesrost24@yandex.by, borodabarber2018@gmail.com'; //Почта получателя, через запятую можно указать сколько угодно адресов
 $subject = 'Заявка с сайта '.$_SERVER['SERVER_NAME'] . ' ' . $_POST['form']; //Заголовок сообщения
 
-$ref = $_SERVER['HTTP_REFERER'];
-$result=parse_url($ref);
-// parse_str($result['query'],$params);
-// if (isset($params['utm_source']) || isset($params['utm_medium']) ||
-//     isset($params['utm_campaign']) || isset($params['utm_content']) || isset($params['utm_term'])){
-//     $utm .= "<p><strong>Источник:</strong> ".$params['utm_source'];
-//     $utm .= "<p><strong>Тип трафика:</strong> ".$params['utm_medium'];
-//     $utm .= "<p><strong>Кампания:</strong> ".$params['utm_campaign'];
-//     $utm .= "<p><strong>Объявление:</strong> ".$params['utm_content'];
-//     $utm .= "<p><strong>Кл. фраза:</strong> ".$params['utm_term'];
-// } else {
-//     $utm .= "<p>Нет данных UTM</p>";
-// }
 $message = '
         <html>
             <head>
@@ -27,15 +14,24 @@ $message = '
             $message .= '<h2>Личная информация</h2>';
         if(isset($_POST['user_name']) && $_POST['user_name'] !== '')
             $message .= '<p>Имя: '.$_POST['user_name'].'</p>';
+        if(isset($_POST['user_age']) && $_POST['user_age'] !== '')
+            $message .= '<p>Возраст: '.$_POST['user_age'].'</p>';
+        if(isset($_POST['user_level']) && $_POST['user_level'] !== '')
+            $message .= '<p>Уровень квалификации: '.$_POST['user_level'].'</p>';
+        if(isset($_POST['user_work_time']) && $_POST['user_work_time'] !== '')
+            $message .= '<p>Опыт работы: '.$_POST['user_work_time'].'</p>';
+        if(isset($_POST['user_skills']) && $_POST['user_skills'] !== '')
+            $message .= '<p>Чему хотели бы научиться: </p>';
+            foreach($_POST['user_skills'] as $value) {
+                $message .= '<p>'.$value.'</p>';
+            }
         if(isset($_POST['user_phone']) && $_POST['user_phone'] !== '')
             $message .= '<p>Телефон: '.$_POST['user_phone'].'</p>';
         if(isset($_POST['user_email']) && $_POST['user_email'] !== '')
             $message .= '<p>Email: '.$_POST['user_email'].'</p>';
         if(isset($_POST['user_message']) && $_POST['user_message'] !== '')
             $message .= '<p>Сообщение: '.$_POST['user_message'].'</p>';
-            
-        // $message .= '<h2>Данные UTM</h2>';
-        // $message .= $utm;
+
 $message .= '                 
             </body>
         </html>'; //Текст нащего сообщения можно использовать HTML теги

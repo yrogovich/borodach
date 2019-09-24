@@ -94,11 +94,11 @@
                 data-aos="fade-up" 
                 data-aos-easing="ease"
                 data-aos-delay="900"
-                data-aos-offset="0">ПОПРОБУЙ СЕБЯ В ДЕЛЕ УЖЕ СЕГОДНЯ</div>
+                data-aos-offset="-100">ПОПРОБУЙ СЕБЯ В ДЕЛЕ УЖЕ СЕГОДНЯ</div>
             <a href="#get-course" rel="modal:open"  class="btn btn-primary"
                 data-aos="zoom-out" 
                 data-aos-delay="2000"
-                data-aos-offset="0">Записаться на бесплатный мастер-класс</a>
+                data-aos-offset="-100">Записаться на бесплатный мастер-класс</a>
         </div>
         <!-- /.container -->
     </header>
@@ -295,6 +295,7 @@
                     <div class="foot">
                         <div class="h4">250 000 тг.</div>
                         <a href="#get-course" rel="modal:open" class="btn btn-black btn-sm">Купить</a>
+                        <a href="#quiz-modal" rel="modal:open" class="btn btn-primary btn-sm">Купить со скидкой xx xxx тг.</a>
                     </div>
                     <!-- /.foot -->
                 </div>
@@ -318,6 +319,7 @@
                     <div class="foot">
                         <div class="h4">100 000 тг.</div>
                         <a href="#get-course" rel="modal:open" class="btn btn-black btn-sm">Купить</a>
+                        <a href="#quiz-modal" rel="modal:open" class="btn btn-primary btn-sm">Купить со скидкой xx xxx тг.</a>
                     </div>
                     <!-- /.foot -->
                 </div>
@@ -340,6 +342,7 @@
                     <div class="foot">
                         <div class="h4">70 000 тг.</div>
                         <a href="#get-course" rel="modal:open" class="btn btn-black btn-sm">Купить</a>
+                        <a href="#quiz-modal" rel="modal:open" class="btn btn-primary btn-sm">Купить со скидкой xx xxx тг.</a>
                     </div>
                     <!-- /.foot -->
                 </div>
@@ -440,7 +443,7 @@
                     <input type="email" name="user_email" placeholder="E-mail" required>
                 </div>
                 <div class="input-wrapper phone-icon">
-                    <input class="phone-mask" type="text" name="user_phone" placeholder="№ телефона" required>
+                    <input type="text" name="user_phone" placeholder="№ телефона" required>
                 </div>
                 <button class="btn btn-primary">Хочу халяву</button>
                 <div class="privacy"><img src="img/icons/check-square.svg" alt="checkbox"> Согласие на обработку персональных данных</div>
@@ -499,7 +502,7 @@
                 <div class="slide">
                     <div class="slider-content">
                         <div class="img-wrapper">
-                            <img src="img/reviews/review-3.png" alt="Сайрап Алиев">
+                            <img src="img/reviews/no-image.jpg" alt="no-image">
                         </div>
                         <div class="content">
                             <div class="h3 title">Сайрап Алиев</div>
@@ -567,7 +570,7 @@
                     <input type="email" name="user_email" placeholder="E-mail" required>
                 </div>
                 <div class="input-wrapper phone-icon">
-                    <input class="phone-mask" type="text" name="user_phone" placeholder="№ телефона" required>
+                    <input type="text" name="user_phone" placeholder="№ телефона" required>
                 </div>
                 <button class="btn btn-primary btn-block">Записаться на бесплатный мастер-класс</button>
                 <div class="privacy"><img src="img/icons/check-square.svg" alt="checkbox"> Согласие на обработку персональных данных</div>
@@ -584,7 +587,6 @@
 
             <div class="row">
                 <div class="map" id="map">
-                    
                 </div>
                 <!-- /.map -->
                 <div class="contacts gray borders">
@@ -649,7 +651,219 @@
     <!-- /.mobile-menu -->
 
     <!-- MODALS -->
-    <div id="in-beard-form" class="modal">
+    <div id="quiz-modal" class="modal">
+        <form id="quiz" action="javascript:" onsubmit="callHandler('#quiz')">
+            <input type="hidden" name="form" value="Квиз">
+            <div class="fieldset active">
+                <div class="head">
+                    <a href="index.html" class="logo">
+                        <img src="img/logo.svg" alt="logo" class="logo-image">
+                        <img src="img/logo-text-black.svg" alt="Учебная акадения BORODA" class="logo-text">
+                    </a>
+                    <!-- /.logo -->
+                </div>
+                <!-- /.head -->
+                <div class="body">
+                    <div class="h3">Ответьте на 5 простых вопросов и получите скидку xxx xxx тг.</div>
+                    <div class="btn btn-primary btn-sm btn-next">начать</div>
+                </div>
+                <!-- /.body -->
+            </div>
+            <!-- /.fieldset -->
+            <div class="fieldset">
+                <div class="head">
+                    <div class="h4">Вопрос 1/5</div>
+                    <div class="h5">Введите имя и возраст</div>
+                </div>
+                <!-- /.head -->
+                <div class="body">
+                    <div class="input-wrapper user-icon">
+                        <input id="user_name" type="text" name="user_name" placeholder="Имя" required>
+                    </div>
+                    <div class="input-wrapper pulse-icon">
+                        <input id="user_age" type="number" name="user_age" placeholder="Возраст" required>
+                    </div>
+                    <button class="btn btn-primary btn-sm btn-next" disabled>Следующий вопрос</button>
+                </div>
+                <!-- /.body -->
+            </div>
+            <!-- /.fieldset -->
+            <div class="fieldset">
+                <div class="head">
+                    <div class="h4">Вопрос 2/5</div>
+                    <div class="h5">Укажите уровень Вашей квалификации</div>
+                </div>
+                <!-- /.head -->
+                <div class="body">
+                    <div class="radio-row">
+                        <div class="radio-wrapper">
+                            <input id="radio-1" type="radio" name="user_level" value="Парикмахер универсал" checked>
+                            <label for="radio-1">
+                                Парикмахер универсал
+                            </label>
+                        </div>
+                        <div class="radio-wrapper">
+                            <input id="radio-2" type="radio" name="user_level" value="Барбер">
+                            <label for="radio-2">
+                                Барбер
+                            </label>
+                        </div>
+                        <div class="radio-wrapper">
+                            <input id="radio-3" type="radio" name="user_level" value="Отсутствуют навыки">
+                            <label for="radio-3">
+                                Отсутствуют навыки
+                            </label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-sm btn-next">Следующий вопрос</button>
+                </div>
+                <!-- /.body -->
+            </div>
+            <!-- /.fieldset -->
+            <div class="fieldset">
+                <div class="head">
+                    <div class="h4">Вопрос 3/5</div>
+                    <div class="h5">Укажите Ваш опыт работы Барбером</div>
+                </div>
+                <!-- /.head -->
+                <div class="body">
+                    <div class="pair">
+                        <div class="radio-row">
+                            <div class="radio-wrapper">
+                                <input id="radio-4" type="radio" name="user_work_time" value="До 0,5 года" checked>
+                                <label for="radio-4">
+                                        До 0,5 года
+                                </label>
+                            </div>
+                            <div class="radio-wrapper">
+                                <input id="radio-5" type="radio" name="user_work_time" value="До 1 года">
+                                <label for="radio-5">
+                                        До 1 года
+                                </label>
+                            </div>
+                            <div class="radio-wrapper">
+                                <input id="radio-6" type="radio" name="user_work_time" value="До 3 лет">
+                                <label for="radio-6">
+                                        До 3 лет
+                                </label>
+                            </div>
+                        </div>
+                        <!-- /.radio-row -->
+                        <div class="radio-row">
+                            <div class="radio-wrapper">
+                                <input id="radio-7" type="radio" name="user_work_time" value="До 5 лет" checked>
+                                <label for="radio-7">
+                                        До 5 лет
+                                </label>
+                            </div>
+                            <div class="radio-wrapper">
+                                <input id="radio-8" type="radio" name="user_work_time" value="Более 5 лет">
+                                <label for="radio-8">
+                                        Более 5 лет
+                                </label>
+                            </div>
+                        </div>
+                        <!-- /.radio-row -->
+                    </div>
+                    <!-- /.pair -->
+                    <button class="btn btn-primary btn-sm btn-next">Следующий вопрос</button>
+                </div>
+                <!-- /.body -->
+            </div>
+            <!-- /.fieldset -->
+
+            <div class="fieldset">
+                <div class="head">
+                    <div class="h4">Вопрос 4/5</div>
+                    <div class="h5">Чему хотели бы научиться, какие направления интересны</div>
+                </div>
+                <!-- /.head -->
+                <div class="body">
+                    <div class="checkbox-row">
+                        <div class="checkbox-wrapper">
+                            <input id="skill-1" type="checkbox" name="user_skills[]" value="Удлиненная стрижка New classic" checked>
+                            <label for="skill-1">
+                                Удлиненная стрижка New classic
+                            </label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input id="skill-2" type="checkbox" name="user_skills[]" value="Техники стрижки fade">
+                            <label for="skill-2">
+                                Техники стрижки fade
+                            </label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input id="skill-3" type="checkbox" name="user_skills[]" value="Укладка феном и стайлингом">
+                            <label for="skill-3">
+                                Укладка феном и стайлингом
+                            </label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input id="skill-4" type="checkbox" name="user_skills[]" value="Тушевка - ножницы + расчёска">
+                            <label for="skill-4">
+                                    Тушевка - ножницы + расчёска
+                            </label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input id="skill-5" type="checkbox" name="user_skills[]" value=" Тушевка - машинка + расчёска">
+                            <label for="skill-5">
+                                    Тушевка - машинка + расчёска
+                            </label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input id="skill-6" type="checkbox" name="user_skills[]" value="Стрижка бороды и усов">
+                            <label for="skill-6">
+                                    Стрижка бороды и усов
+                            </label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input id="skill-7" type="checkbox" name="user_skills[]" value="Работа с опасной бритвой">
+                            <label for="skill-7">
+                                    Работа с опасной бритвой
+                            </label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input id="skill-8" type="checkbox" name="user_skills[]" value=" Моделирование бороды">
+                            <label for="skill-8">
+                                    Моделирование бороды
+                            </label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input id="skill-9" type="checkbox" name="user_skills[]" value="Королевское бритье">
+                            <label for="skill-9">
+                                    Королевское бритье
+                            </label>
+                        </div>
+                    </div>
+                    <!-- /.checkbox-row -->
+                    
+                    <button class="btn btn-primary btn-sm btn-next">Следующий вопрос</button>
+                </div>
+                <!-- /.body -->
+            </div>
+            <!-- /.fieldset -->
+            <div class="fieldset">
+                <div class="head">
+                    <div class="h4">Вопрос 5/5</div>
+                    <div class="h5">Осталось совсем чуть-чуть, введите Ваши контактные данные и получите скидку ХХХ ХХХ тг. </div>
+                </div>
+                <!-- /.head -->
+                <div class="body">
+                    <div class="input-wrapper mail-icon">
+                        <input type="email" name="user_email" placeholder="E-mail" required>
+                    </div>
+                    <div class="input-wrapper phone-icon">
+                        <input type="text" name="user_phone" placeholder="№ телефона" required>
+                    </div>
+                    <button class="btn btn-primary btn-sm">Получить скидку</button>
+                </div>
+                <!-- /.body -->
+            </div>
+            <!-- /.fieldset -->
+        </form>
+    </div>
+    <!-- MODALS -->
+    <div id="in-beard" class="modal">
         <div class="head">
             <div class="h4">Оставь свои контакты для связи</div>
             <p class="bold">Наш менеджер с тобой свяжется и подробно расскажет что и как.</p>
@@ -657,14 +871,14 @@
         <!-- /.head -->
         <form id="in-beard-form" action="javascript:" onsubmit="callHandler('#in-beard-form')">
             <input type="hidden" name="form" value="Хочу в BORODA">
-            <div class="input-wrapper">
+            <div class="input-wrapper user-icon">
                 <input type="text" name="user_name" placeholder="Имя" required>
             </div>
-            <div class="input-wrapper">
+            <div class="input-wrapper mail-icon">
                 <input type="email" name="user_email" placeholder="E-mail" required>
             </div>
-            <div class="input-wrapper">
-                <input class="phone-mask" type="text" name="user_phone" placeholder="№ телефона" required>
+            <div class="input-wrapper user-phone">
+                <input type="text" name="user_phone" placeholder="№ телефона" required>
             </div>
             <button class="btn btn-primary btn-sm">Хочу в BORODA</button>
             <div class="privacy"><img src="img/icons/check-square.svg" alt="checkbox"> Согласие на обработку персональных данных</div>
@@ -679,14 +893,14 @@
         <!-- /.head -->
         <form id="get-course-form" action="javascript:" onsubmit="callHandler('#get-course-form')">
             <input type="hidden" name="form" value="Записаться на бесплатный мастер-класс">
-            <div class="input-wrapper">
+            <div class="input-wrapper user-icon">
                 <input type="text" name="user_name" placeholder="Имя" required>
             </div>
-            <div class="input-wrapper">
+            <div class="input-wrapper mail-icon">
                 <input type="email" name="user_email" placeholder="E-mail" required>
             </div>
-            <div class="input-wrapper">
-                <input class="phone-mask" type="text" name="user_phone" placeholder="№ телефона" required>
+            <div class="input-wrapper phone-icon">
+                <input type="text" name="user_phone" placeholder="№ телефона" required>
             </div>
             <button class="btn btn-primary btn-sm">Записаться</button>
             <div class="privacy"><img src="img/icons/check-square.svg" alt="checkbox"> Согласие на обработку персональных данных</div>
@@ -708,7 +922,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.2/jquery.modal.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/1.17.2/simple-lightbox.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script src="js/main.js"></script>

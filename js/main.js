@@ -1,4 +1,24 @@
 $(function() {
+    //quiz
+    $('#quiz .fieldset .btn-next').click(function() {
+        $('.fieldset.active').removeClass('active').next().addClass('active');
+        console.log(1);
+        return false;
+    });
+    $('#quiz .fieldset input').on('input', function() {  
+        checkInput();
+    });
+    function checkInput() {
+        if($('#user_name').val() && $('#user_age').val()){
+            $('.btn-next').prop('disabled', false);
+            return true;
+        }
+        else {
+            $('.btn-next').prop('disabled', true);
+            return false;
+        }
+    }
+
     SmoothScroll({ 
         animationTime: 800,
         stepSize: 85 
@@ -78,27 +98,5 @@ $(function() {
             console.log('error loading ' + element.data('src'));
         }
     });
-    // // Mobile burger script
-    // $('.burger').click(function() {
-    //     $(this).toggleClass('active');
-    //     if($('.primary-menu-container').css('display') === 'flex') {
-    //         $('.primary-menu-container')
-    //             .fadeOut(300, function() {
-    //                 if($(this).css('display') === 'none')
-    //                 $(this).removeAttr('style');
-    //         });
-    //     } else {               
-    //         $('.primary-menu-container')
-    //             .css("display", "flex")
-    //             .hide()
-    //             .fadeIn(300, function() {
-    //                 if($(this).css('display') === 'none')
-    //                 $(this).removeAttr('style');
-    //         });
-    //     }
-    // });
-    
 
-    // Masks for input
-    //$('.phone-mask').mask('00000000');
 });

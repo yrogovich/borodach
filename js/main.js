@@ -21,12 +21,12 @@ $(function() {
     });
 
     //  Show ymaps on scroll
-    var point = $('#boroda-features');
+    var point = $('#form-section');
     var pointTop = point.offset().top;
     var handler = function () {
         var windowTop = $(this).scrollTop();
         if (windowTop > pointTop) {
-            $('#map').html('<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af9e260f4a9bda6fa194559dc9b3dbf231a510e156af062e8a4e5d3de1e3a1552&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=false"></script>"></script>');
+            $('#map').html('<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af9e260f4a9bda6fa194559dc9b3dbf231a510e156af062e8a4e5d3de1e3a1552&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=false"></script>">');
             $(window).unbind( "scroll", handler );
         }
     };

@@ -1528,6 +1528,12 @@ ul.primary-style li:before {
   max-width: 545px;
 }
 
+@media screen and (max-width: 780px) {
+  .modal {
+    padding: 4rem 2rem 4rem 2rem;
+  }
+}
+
 .modal .h4,
 .modal .h3 {
   color: #D5A353;
@@ -1540,6 +1546,12 @@ ul.primary-style li:before {
 
 .modal .h4 {
   text-transform: uppercase;
+}
+
+@media screen and (max-width: 780px) {
+  .modal .h4 {
+    font-size: 1.6rem;
+  }
 }
 
 .modal .head {
@@ -1564,6 +1576,19 @@ ul.primary-style li:before {
   opacity: .5;
 }
 
+@media screen and (max-width: 780px) {
+  .modal .input-wrapper {
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .blocker {
+    padding: 0;
+  }
+}
+
 .privacy {
   -webkit-filter: saturate(0);
           filter: saturate(0);
@@ -1581,7 +1606,10 @@ ul.primary-style li:before {
 
 @media screen and (max-width: 560px) {
   .privacy {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
+  }
+  .privacy img {
+    height: 1.2rem;
   }
 }
 

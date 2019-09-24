@@ -1025,6 +1025,9 @@ ul.primary-style {
     padding: 5rem 3rem 4rem 3rem;
     border: 1rem solid transparent;
     box-shadow:inset 0px 0px 0px 1px $primary;
+    @include sm-block() {
+        padding: 4rem 2rem 4rem 2rem;
+    }
 
     border-radius: 0;
     text-align: center;
@@ -1039,6 +1042,7 @@ ul.primary-style {
     }
     .h4 {
        text-transform: uppercase;
+       @include sm(font-size, 1.6rem);
     }
     .head {
         margin-bottom: 3rem;
@@ -1057,6 +1061,15 @@ ul.primary-style {
             opacity: .5;
         }
     }
+    @include sm-block() {
+       .input-wrapper {
+           font-size: 1.4rem;
+           margin-bottom: 3rem;
+       }
+    }
+}
+.blocker {
+    @include sm(padding, 0);
 }
 .privacy {
     filter: saturate(0);
@@ -1064,7 +1077,12 @@ ul.primary-style {
     display: flex;
     align-items: center;
     justify-content: center;
-    @include xs(font-size, 1.15rem);
+    @include xs-block() {
+        font-size: 1.1rem;
+        img {
+            height: 1.2rem;
+        }
+    }
     img {
         margin-right: 1rem;
     }

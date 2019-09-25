@@ -1,5 +1,17 @@
 $(function() {
-    //quiz
+    $('.course .btn').each(function (index, value) {
+        var giftSize = $(this).next('input[name=gift-size]').val()
+        if (giftSize) {
+            $(this).children('.gift').text(giftSize);
+        }
+    });
+    $('.btn-callquiz').click(function(){
+        var giftSize = $(this).children('.gift').text();
+        $('#quiz .gift').text(giftSize);
+        $('#quiz input[name=gift_size]').val(giftSize);
+    });
+
+    // quiz
     $('#quiz .fieldset .btn-next').click(function() {
         $('.fieldset.active').removeClass('active').next().addClass('active');
         console.log(1);

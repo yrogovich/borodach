@@ -25,6 +25,8 @@ $message = '
             foreach($_POST['user_skills'] as $value) {
                 $message .= '<p>'.$value.'</p>';
             }
+         if(isset($_POST['gift_size']) && $_POST['gift_size'] !== '')
+            $message .= '<p>Размер скидки: '.$_POST['gift_size'].'</p>';
         if(isset($_POST['user_phone']) && $_POST['user_phone'] !== '')
             $message .= '<p>Телефон: '.$_POST['user_phone'].'</p>';
         if(isset($_POST['user_email']) && $_POST['user_email'] !== '')

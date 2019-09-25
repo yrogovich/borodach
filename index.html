@@ -205,7 +205,7 @@
             <!-- /.column-1 -->
             <div class="column-2">
                 <div class="content">
-                    <p>Каждый час случается 11 извержений вулканов и столько же открывается барбершопов в Казахстана. Спрос превышает предложение - рынок не успевает насытиться квалифицированными кадрами.</p>
+                    <p>Каждый час случается 11 извержений вулканов и столько же открывается барбершопов в Казакстана. Спрос превышает предложение - рынок не успевает насытиться квалифицированными кадрами.</p>
                     <p>Сеть салонов BORODA решила всё изменить. Нам важно выпустить профессионалов своего дела: у кого горят глаза, набита рука, есть азарт и искренний интерес к тому, что делаешь и для кого.</p>
 
                     <div class="empty-space"></div>
@@ -313,7 +313,8 @@
                     <div class="foot">
                         <div class="h4">250 000 тг.</div>
                         <a href="#get-course" rel="modal:open" class="btn btn-black btn-sm">Купить</a>
-                        <a href="#quiz-modal" rel="modal:open" class="btn btn-primary btn-sm">Купить со скидкой xx xxx тг.</a>
+                        <a href="#quiz-modal" rel="modal:open" class="btn btn-primary btn-sm btn-callquiz">Купить со скидкой <span class="gift"></span> тг.</a>
+                        <input type="hidden" name="gift-size" value="15 000">
                     </div>
                     <!-- /.foot -->
                 </div>
@@ -337,7 +338,8 @@
                     <div class="foot">
                         <div class="h4">100 000 тг.</div>
                         <a href="#get-course" rel="modal:open" class="btn btn-black btn-sm">Купить</a>
-                        <a href="#quiz-modal" rel="modal:open" class="btn btn-primary btn-sm">Купить со скидкой xx xxx тг.</a>
+                        <a href="#quiz-modal" rel="modal:open" class="btn btn-primary btn-sm btn-callquiz">Купить со скидкой <span class="gift"></span> тг.</a>
+                        <input type="hidden" name="gift-size" value="10 000">
                     </div>
                     <!-- /.foot -->
                 </div>
@@ -360,7 +362,8 @@
                     <div class="foot">
                         <div class="h4">70 000 тг.</div>
                         <a href="#get-course" rel="modal:open" class="btn btn-black btn-sm">Купить</a>
-                        <a href="#quiz-modal" rel="modal:open" class="btn btn-primary btn-sm">Купить со скидкой xx xxx тг.</a>
+                        <a href="#quiz-modal" rel="modal:open" class="btn btn-primary btn-sm btn-callquiz">Купить со скидкой <span class="gift"></span> тг.</a>
+                        <input type="hidden" name="gift-size" value="5 000">
                     </div>
                     <!-- /.foot -->
                 </div>
@@ -672,6 +675,7 @@
     <div id="quiz-modal" class="modal">
         <form id="quiz" action="javascript:" onsubmit="callHandler('#quiz')">
             <input type="hidden" name="form" value="Квиз">
+            <input type="hidden" name="gift_size">
             <div class="fieldset active">
                 <div class="head">
                     <a href="index.html" class="logo">
@@ -682,7 +686,7 @@
                 </div>
                 <!-- /.head -->
                 <div class="body">
-                    <div class="h3">Ответьте на 5 простых вопросов и получите скидку xxx xxx тг.</div>
+                    <div class="h3">Ответьте на 5 простых вопросов и получите скидку <span class="gift"></span> тг.</div>
                     <div class="btn btn-primary btn-sm btn-next">начать</div>
                 </div>
                 <!-- /.body -->
@@ -863,7 +867,7 @@
             <div class="fieldset">
                 <div class="head">
                     <div class="h4">Вопрос 5/5</div>
-                    <div class="h5">Осталось совсем чуть-чуть, введите Ваши контактные данные и получите скидку ХХХ ХХХ тг. </div>
+                    <div class="h5">Осталось совсем чуть-чуть, введите Ваши контактные данные и получите скидку <span class="gift"></span> тг.</div>
                 </div>
                 <!-- /.head -->
                 <div class="body">

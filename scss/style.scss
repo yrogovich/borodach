@@ -36,6 +36,7 @@ a {
     color: inherit;
     margin: 0;
     padding: 0;
+    color: $primary;
 }
 
 html {
@@ -77,6 +78,9 @@ h5, .h5 {
     @include sm(font-size, 3vh);
     &.primary-style {
         text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         &:before,
         &:after {
             display: inline-block;
@@ -703,6 +707,7 @@ ul.primary-style {
         text-align: center;
         opacity: .6;
     }
+   
 }
 .courses {
     @include row-flex();
@@ -740,12 +745,14 @@ ul.primary-style {
             li {
                 margin-bottom: 2rem;
             }
-            min-height: 35rem;
+            min-height: 37rem;
             border-bottom: 1px solid $primary;
             @include sm-block() {
                 min-height: unset;
             }
-            
+            a {
+                text-decoration: underline;
+            }
         }
         .foot {
             height: 13rem;
@@ -756,6 +763,7 @@ ul.primary-style {
             .btn {
                 display: block;
                 margin-bottom: 1rem;
+                padding: 1rem 1.5rem;
             }
             @include sm-block() {
                 height: unset;
@@ -1069,6 +1077,31 @@ ul.primary-style {
         }
         &:hover {
             opacity: .5;
+        }
+    }
+    &.get-more {
+        max-width: 80rem;
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0 -1rem;
+            .column {
+                margin: 1rem;
+                flex: 1 1 150px;
+                text-align: left;
+            }
+        }
+        .column {
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+        .bold {
+            margin-bottom: 2rem;
+        }
+        .price {
+            font-weight: bold;
+            color: $primary;
         }
     }
     @include sm-block() {

@@ -79,6 +79,7 @@ a {
   color: inherit;
   margin: 0;
   padding: 0;
+  color: #D5A353;
 }
 
 html {
@@ -140,6 +141,15 @@ h5, .h5 {
 
 .h2.primary-style, h2.primary-style {
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .h2.primary-style:before, .h2.primary-style:after, h2.primary-style:before, h2.primary-style:after {
@@ -1094,7 +1104,7 @@ ul.primary-style li:before {
 
 .courses .course .body {
   padding: 2rem 3rem 2rem 2rem;
-  min-height: 35rem;
+  min-height: 37rem;
   border-bottom: 1px solid #D5A353;
 }
 
@@ -1106,6 +1116,10 @@ ul.primary-style li:before {
   .courses .course .body {
     min-height: unset;
   }
+}
+
+.courses .course .body a {
+  text-decoration: underline;
 }
 
 .courses .course .foot {
@@ -1120,6 +1134,7 @@ ul.primary-style li:before {
 .courses .course .foot .btn {
   display: block;
   margin-bottom: 1rem;
+  padding: 1rem 1.5rem;
 }
 
 @media screen and (max-width: 780px) {
@@ -1593,6 +1608,44 @@ ul.primary-style li:before {
 
 .modal a.close-modal:hover {
   opacity: .5;
+}
+
+.modal.get-more {
+  max-width: 80rem;
+}
+
+.modal.get-more .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 -1rem;
+}
+
+.modal.get-more .row .column {
+  margin: 1rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 150px;
+          flex: 1 1 150px;
+  text-align: left;
+}
+
+.modal.get-more .column {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.modal.get-more .bold {
+  margin-bottom: 2rem;
+}
+
+.modal.get-more .price {
+  font-weight: bold;
+  color: #D5A353;
 }
 
 @media screen and (max-width: 780px) {
